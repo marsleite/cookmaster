@@ -74,5 +74,20 @@ describe('1 - Crie um endpoint para cadastro de usuários ', () => {
         expect(result.message).toBe('Invalid entries. Try again.');
       });
   });
+
+  it('Será validado que o campo "senha" é obrigatório', async () => {
+    await frisby
+      .post(`${url}/users/`,
+        {
+          name: 'Erick Jacquin',
+          email: 'erickjaquin',
+        })
+      .expect('status', 400)
+      .then((response) => {
+        const { body } = response;
+        const result = JSON.parse(body);
+        expect(result.message).toBe('Invalid entries. Try again.');
+      });
+  });
   
 })

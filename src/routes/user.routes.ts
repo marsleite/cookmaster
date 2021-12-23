@@ -8,7 +8,8 @@ const userController = new UserController()
 
 userRouter.post('/', 
   new Validation().validName,
-  new Validation().validEmail, 
+  new Validation().validEmail,
+  new Validation().validPassword, 
   userController.create
 );
 

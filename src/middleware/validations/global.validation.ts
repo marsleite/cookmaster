@@ -27,4 +27,14 @@ export class Validation {
     return next();
   }
 
+  async validPassword(req: Request, res: Response, next: NextFunction) {
+    const { password } = req.body;
+
+    if (password === undefined || password === '') {
+      throw new AppError('Invalid entries. Try again.');
+    }
+
+    return next();
+  }
+
 }
