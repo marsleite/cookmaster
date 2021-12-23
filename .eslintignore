@@ -1,0 +1,6 @@
+/*.js’
+node_modules
+dist
+test
+src/integration-tests/
+seed.js
