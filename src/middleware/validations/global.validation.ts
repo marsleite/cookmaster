@@ -19,6 +19,10 @@ export class Validation {
     if (email === undefined) {
       throw new AppError('Invalid entries. Try again.');
     }
+
+    if (!email.includes('@')) {
+      throw new AppError('Invalid entries. Try again.');
+    }
   
     return next();
   }
