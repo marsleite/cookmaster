@@ -1,6 +1,7 @@
 /*.js’
 node_modules
 dist
-test
+tsconfig.json
+test/users.test.ts
 src/integration-tests/
 seed.js
