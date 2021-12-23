@@ -13,4 +13,14 @@ export class Validation {
     return next();
   }
 
+  async validEmail(req: Request, res: Response, next: NextFunction) {
+    const { email } = req.body;
+  
+    if (email === undefined) {
+      throw new AppError('Invalid entries. Try again.');
+    }
+  
+    return next();
+  }
+
 }

@@ -6,6 +6,10 @@ const userRouter = Router();
 
 const userController = new UserController()
 
-userRouter.post('/', new Validation().validName, userController.create);
+userRouter.post('/', 
+  new Validation().validName,
+  new Validation().validEmail, 
+  userController.create
+);
 
 export default userRouter;
