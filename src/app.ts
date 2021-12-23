@@ -1,7 +1,14 @@
 import express from 'express';
+import router from './routes';
 
 const app = express();
 
-app.listen(3000, () => {
-  console.log('Running on 3000')
+app.use(express.json());
+
+app.use(router);
+
+const PORT = 3000;
+
+app.listen(PORT, () => {
+  console.log(`Running on port ${ PORT }`);
 })
